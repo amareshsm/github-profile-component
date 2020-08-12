@@ -2,7 +2,6 @@ import babel from '@rollup/plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import { string } from 'rollup-plugin-string'
-import postcss from 'rollup-plugin-postcss'
 import image from '@rollup/plugin-image'
 import visualizer from 'rollup-plugin-visualizer'
 
@@ -24,18 +23,20 @@ const outputs = [
     file: `${dist}/${bundle}.umd.js`,
     globals: {
       react: 'React',
+      'prop-types': 'PropTypes',
+      Component: 'React',
     },
     format: 'umd',
   },
 ]
 const common = {
   input: 'src/index.js',
-  external: ['react'],
+  external: ['react', 'prop-types'],
   plugins: [
     resolve(),
-    postcss(),
     babel({
       exclude: 'node_modules/**',
+      plugins: ['transform-react-remove-prop-types'],
     }),
     image(),
     string({

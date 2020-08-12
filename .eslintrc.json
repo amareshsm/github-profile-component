@@ -14,6 +14,11 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "import/prefer-default-export": "off",
+    "react/prefer-stateless-function": "warn",
+    "no-useless-constructor": "off",
+    "react/jsx-filename-extension": "warn",
+    "import/newline-after-import": "warn"
   }
 }

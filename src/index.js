@@ -1,3 +1,1 @@
-const func = () => {}
-
-export default func
+export { default as Profile } from './component'
