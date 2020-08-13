@@ -59,7 +59,7 @@ class Profile extends Component {
       })
       .catch((error) => {
         this.setState({
-          errorMessage: 'There was an error fetching data 1',
+          errorMessage: error,
         })
       })
     if (showRepo == 'true') {
@@ -78,7 +78,7 @@ class Profile extends Component {
         })
         .catch((error) => {
           this.setState({
-            errorMessage: 'There was an error fetching data 2',
+            errorMessage: error,
           })
         })
     }
