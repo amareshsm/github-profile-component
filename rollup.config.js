@@ -4,6 +4,7 @@ import { terser } from 'rollup-plugin-terser'
 import { string } from 'rollup-plugin-string'
 import image from '@rollup/plugin-image'
 import visualizer from 'rollup-plugin-visualizer'
+import json from 'rollup-plugin-json'
 
 const dist = 'dist'
 const bundle = 'bundle'
@@ -25,13 +26,17 @@ const outputs = [
       react: 'React',
       'prop-types': 'PropTypes',
       Component: 'React',
+      axios: 'axios',
     },
     format: 'umd',
   },
 ]
 const common = {
   input: 'src/index.js',
-  external: ['react', 'prop-types'],
+  watch: {
+    chokidar: false,
+  },
+  external: ['react', 'prop-types', 'axios'],
   plugins: [
     resolve(),
     babel({
@@ -42,6 +47,7 @@ const common = {
     string({
       include: '**/*.css',
     }),
+    json(),
     visualizer(),
     production && terser(),
   ],

@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es2020": true
@@ -8,7 +9,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 11,
+    "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
@@ -19,6 +20,23 @@
     "react/prefer-stateless-function": "warn",
     "no-useless-constructor": "off",
     "react/jsx-filename-extension": "warn",
-    "import/newline-after-import": "warn"
+    "import/newline-after-import": "warn",
+    "no-undef": "warn",
+    "react/jsx-fragments": "warn",
+    "react/jsx-one-expression-per-line": "warn",
+    "react/no-array-index-key": "warn",
+    "object-shorthand": "warn",
+    "no-else-return": "warn",
+    "no-unused-var": "off",
+    "consistent-return": "warn",
+    "react/jsx-closing-bracket-location": "warn",
+    "react/jsx-closing-tag-location": "warn",
+    "react/jsx-no-target-blank": "warn",
+    "react/button-has-type": "warn",
+    "react/self-closing-comp": "warn",
+    "lines-between-class-members": "warn",
+    "eqeqeq": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn"
   }
 }
