@@ -269,7 +269,7 @@ Profile.propTypes = {
 }
 
 Profile.defaultProps = {
-  showRepo: 'false',
+  showRepo: 'true',
   username: 'amareshsm',
 }
 export default Profile
