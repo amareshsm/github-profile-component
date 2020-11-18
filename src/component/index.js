@@ -124,15 +124,15 @@ class Profile extends Component {
                 {location === null ? (
                   ''
                 ) : (
-                  <div className="GithubProfile_Location">
-                    <span className="GithubProfile_Location_Icon">
-                      <svg className="icon">
-                        <use xlinkHref="#icon-location" />
-                      </svg>
-                    </span>
-                    <span>{location}</span>
-                  </div>
-                )}
+                    <div className="GithubProfile_Location">
+                      <span className="GithubProfile_Location_Icon">
+                        <svg className="icon">
+                          <use xlinkHref="#icon-location" />
+                        </svg>
+                      </span>
+                      <span>{location}</span>
+                    </div>
+                  )}
                 <div className="GithubProfile_Card_Info">
                   <div className="GithubProfile_Card_Info_Item">
                     <div className="GithubProfile_Card_Info_Title">
@@ -193,29 +193,29 @@ class Profile extends Component {
     return isLoadingRepo ? (
       <h2>Loading</h2>
     ) : (
-      <div className="githubRepo_Section">
-        <div className="githubRepo">
-          {currentPosts.map((data, id) => (
-            <a
-              key={`item-${id}`}
-              target="_blank"
-              className="repoChild"
-              href={data.html_url}>
-              <div>
-                <div className="repoLinkName"> Name :{data.name}</div>
+        <div className="githubRepo_Section">
+          <div className="githubRepo">
+            {currentPosts.map((data, id) => (
+              <a
+                key={`item-${id}`}
+                target="_blank"
+                className="repoChild"
+                href={data.html_url}>
                 <div>
-                  Description:
+                  <div className="repoLinkName"> Name :{data.name}</div>
+                  <div>
+                    Description:
                   {data.description !== null
-                    ? data.description
-                    : '  -'}{' '}
+                      ? data.description
+                      : '  -'}{' '}
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))}
+          </div>
+          {this.pagination(repoData.length, postsPerPage)}
         </div>
-        {this.pagination(repoData.length, postsPerPage)}
-      </div>
-    )
+      )
   }
 
   pagination = (totalPosts, postPerPage) => {
@@ -234,7 +234,7 @@ class Profile extends Component {
                 style={
                   currentPage === pages
                     ? { backgroundColor: '#317dff' }
-                    : { backgroundColor: 'lightblue' }
+                    : { backgroundColor: 'blue' }
                 }>
                 {pages}
               </div>
@@ -253,11 +253,11 @@ class Profile extends Component {
         {isLoading ? (
           <h1>Loading</h1>
         ) : (
-          <div>
-            {this.renderUserDetails()}
-            {errorMessage}
-          </div>
-        )}
+            <div>
+              {this.renderUserDetails()}
+              {errorMessage}
+            </div>
+          )}
       </React.Fragment>
     )
   }
